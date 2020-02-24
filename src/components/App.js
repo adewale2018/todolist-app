@@ -1,12 +1,15 @@
 import React from "react";
-import TodoList from './TodoList';
+import TodoList from "./TodoList";
+import Header from "./Header";
 import "../App.css";
 
 function App() {
   return (
-    <div className='App'>
-      <h2>TodoList App</h2>
-      <TodoList />
+    <div className=''>
+      <Header />
+      <div className='container'>
+        <TodoList />
+      </div>
     </div>
   );
 }

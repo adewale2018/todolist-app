@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import uuid from 'uuid/v4';
+import uuid from "uuid/v4";
 import Todo from "./Todo";
 import NewTodoForm from "./NewTodoForm";
 
@@ -14,18 +14,30 @@ class TodoList extends Component {
       ]
     };
 
-    this.addNewTodo = this.addNewTodo.bind(this); 
+    this.addNewTodo = this.addNewTodo.bind(this);
+    this.deleteTodo = this.deleteTodo.bind(this);
   }
   addNewTodo(newTask) {
-    let newTodo = {...newTask, done: false, id: uuid()}
+    let newTodo = { ...newTask, done: false, id: uuid() };
     const todos = [...this.state.todos, newTodo];
     this.setState({ todos: todos });
+  }
+  deleteTodo(id) {
+    this.setState(curTodo => ({
+      todos: curTodo.todos.filter(todo => todo.id !== id)
+    }));
   }
   render() {
     return (
       <div>
         {this.state.todos.map(todo => (
-          <Todo key={todo.id} id={todo.id} task={todo.task} done={todo.done} />
+          <Todo
+            key={todo.id}
+            id={todo.id}
+            task={todo.task}
+            done={todo.done}
+            deleteTodo={this.deleteTodo}
+          />
         ))}
         <br />
         <NewTodoForm addNewTodo={this.addNewTodo} />

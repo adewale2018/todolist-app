@@ -12,7 +12,10 @@ class Todo extends Component {
           <button className='waves-effect waves-light btn'>
             <i className='large material-icons'>edit</i>
           </button>
-          <button className='waves-effect waves-light btn'>
+          <button
+            className='waves-effect waves-light btn deep-orange lighten-1'
+            style={{ marginLeft: "5px" }}
+          >
             <i className='large material-icons'>delete</i>
           </button>
         </div>

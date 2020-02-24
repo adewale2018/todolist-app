@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import uuid from 'uuid/v4';
 import Todo from "./Todo";
+import NewTodoForm from "./NewTodoForm";
 
 class TodoList extends Component {
   constructor(props) {
@@ -7,10 +9,17 @@ class TodoList extends Component {
 
     this.state = {
       todos: [
-        { id: 1, task: "Wash the plates", done: false },
-        { id: 2, task: "Learn react", done: false }
+        { id: uuid(), task: "Wash the plates", done: false },
+        { id: uuid(), task: "Learn react", done: false }
       ]
     };
+
+    this.addNewTodo = this.addNewTodo.bind(this); 
+  }
+  addNewTodo(newTask) {
+    let newTodo = {...newTask, done: false, id: uuid()}
+    const todos = [...this.state.todos, newTodo];
+    this.setState({ todos: todos });
   }
   render() {
     return (
@@ -18,6 +27,8 @@ class TodoList extends Component {
         {this.state.todos.map(todo => (
           <Todo key={todo.id} id={todo.id} task={todo.task} done={todo.done} />
         ))}
+        <br />
+        <NewTodoForm addNewTodo={this.addNewTodo} />
       </div>
     );
   }

@@ -2,10 +2,18 @@ import React from "react";
 
 const Header = () => {
   return (
-    <nav style={{marginBottom: '15px'}}>
+    <nav style={{ marginBottom: "15px", padding: '0 20px ' }}>
       <div className='nav-wrapper'>
-        <a href='/' className='brand-logo'>
-          Todo App
+        <a
+          href='/'
+          className='brand-logo'
+          style={{
+            fontFamily: "Oswald",
+            textTransform: "uppercase",
+            letterSpacing: "2px"
+          }}
+        >
+          Cosodevt Todo App
         </a>
         <ul id='nav-mobile' className='right hide-on-med-and-down'>
           <li>

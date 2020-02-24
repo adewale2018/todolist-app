@@ -16,13 +16,16 @@ export default class NewTodoForm extends Component {
   }
   handleSubmit(evt) {
     evt.preventDefault();
-    this.props.addNewTodo(this.state);
-    this.setState({ task: "" });
+    if (this.state.task.trim() !== ""){
+
+      this.props.addNewTodo(this.state);
+      this.setState({ task: "" });
+    }
   }
   render() {
     return (
       <div className='row'>
-        <h6 style={{ border: "1px solid lightgrey", textAlign: "center", padding: '10px', color: "#26a69a" }}>New Todo Form</h6>
+        <h6 style={{ borderRight: "3px solid lightgrey", borderTop: "1px solid lightgrey",borderLeft: "3px solid lightgrey", borderBottom: "1px solid lightgrey", padding: '10px', color: "#26a69a", width: '50%' }}>New Todo Form</h6>
         <form className='col s12' onSubmit={this.handleSubmit}>
           <div className='row'>
             <div className='input-field col s6'>
@@ -33,6 +36,7 @@ export default class NewTodoForm extends Component {
                 name='task'
                 value={this.state.task}
                 onChange={this.handleChange}
+                required
               />
               <label htmlFor='task'>New Task</label>
             </div>

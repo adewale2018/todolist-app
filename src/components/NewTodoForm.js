@@ -24,7 +24,7 @@ export default class NewTodoForm extends Component {
   }
   render() {
     return (
-      <div className='row'>
+      <div className='row' style={{marginTop: '6rem'}}>
         <h6 style={{ borderRight: "3px solid lightgrey", borderTop: "1px solid lightgrey",borderLeft: "3px solid lightgrey", borderBottom: "1px solid lightgrey", padding: '10px', color: "#26a69a", width: '50%' }}>New Todo Form</h6>
         <form className='col s12' onSubmit={this.handleSubmit}>
           <div className='row'>

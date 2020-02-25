@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <nav style={{ marginBottom: "15px", padding: '0 20px ' }}>
+    <nav style={{ marginBottom: "5px", padding: '0 20px ' }}>
       <div className='nav-wrapper'>
         <a
           href='/'
@@ -20,10 +20,10 @@ const Header = () => {
             <a href='/'>Home</a>
           </li>
           <li>
-            <a href='badges.html'>About</a>
+            <a href='/'>About</a>
           </li>
           <li>
-            <a href='collapsible.html'>Contact</a>
+            <a href='/'>Contact</a>
           </li>
         </ul>
       </div>

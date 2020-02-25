@@ -1,1 +1,9 @@
-.
+.TodoList {
+  border: 1px solid #26a69a;
+  padding: 2rem 5rem;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
+}

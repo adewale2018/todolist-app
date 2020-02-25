@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import uuid from "uuid/v4";
 import Todo from "./Todo";
 import NewTodoForm from "./NewTodoForm";
-import './TodoList.css';
+import "./TodoList.css";
 
 class TodoList extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class TodoList extends Component {
   }
   render() {
     return (
-      <div className="TodoList">
+      <div className='TodoList'>
         {this.state.todos.map(todo => (
           <Todo
             key={todo.id}
@@ -52,7 +52,7 @@ class TodoList extends Component {
             updateTodo={this.updateTodo}
           />
         ))}
-        <br />
+        
         <NewTodoForm addNewTodo={this.addNewTodo} />
       </div>
     );
